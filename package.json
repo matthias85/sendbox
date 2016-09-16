@@ -1,0 +1,17 @@
+{
+  "name": "sendbox",
+  "description": "A JavaScript-tool for sending messages on socket.io",
+  "version": "1.0.0",
+  "author": "Matthias Schmidt",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matthias85/sendbox.git"
+  },
+  "main": "app.js",
+  "dependencies": {
+    "express": "2.5.10",
+    "pug": "^2.0.0-beta6",
+    "socket.io": "^ 1.4.8"
+  }
+}
