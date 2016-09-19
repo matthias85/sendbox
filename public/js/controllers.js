@@ -13,7 +13,7 @@ function AppCtrl($scope, socket) {
   });
 
   socket.on('send:message', function (message) {
-    $scope.messages.push(message);
+    $scope.messages.unshift(message);
   });
 
   socket.on('change:name', function (data) {
@@ -21,7 +21,9 @@ function AppCtrl($scope, socket) {
   });
 
   socket.on('user:join', function (data) {
-    $scope.messages.push({
+    $scope.messages.unshift({
+      type: 'user-join',
+      date: new Date(),
       user: 'chatroom',
       text: 'User ' + data.name + ' has joined.'
     });
@@ -30,7 +32,9 @@ function AppCtrl($scope, socket) {
 
   // add a message to the conversation when a user disconnects or leaves the room
   socket.on('user:left', function (data) {
-    $scope.messages.push({
+    $scope.messages.unshift({
+      type: 'user-left',
+      date: new Date(),
       user: 'chatroom',
       text: 'User ' + data.name + ' has left.'
     });
@@ -56,7 +60,9 @@ function AppCtrl($scope, socket) {
       }
     }
 
-    $scope.messages.push({
+    $scope.messages.unshift({
+      type: 'user-change',
+      date: new Date(),
       user: 'chatroom',
       text: 'User ' + oldName + ' is now known as ' + newName + '.'
     });
@@ -89,7 +95,9 @@ function AppCtrl($scope, socket) {
     });
 
     // add the message to our model locally
-    $scope.messages.push({
+    $scope.messages.unshift({
+      type: 'default',
+      date: new Date(),
       user: $scope.name,
       text: $scope.message
     });

@@ -1,6 +1,6 @@
 {
   "name": "sendbox",
-  "description": "A JavaScript-tool for sending messages on socket.io",
+  "description": "A JavaScript-tool for sending messages with socket.io",
   "version": "1.0.0",
   "author": "Matthias Schmidt",
   "license": "MIT",
