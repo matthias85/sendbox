@@ -5,3 +5,9 @@
 .list-group-item:not(:last-child){
     border-bottom: 2px solid #f1f1f1;
 }
+.list-avatar{
+    margin-right: 16px;
+    border-radius: 20px 20px 20px;
+    height: 42px;
+    width: 42px;
+}
